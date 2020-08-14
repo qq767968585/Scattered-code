@@ -17,18 +17,17 @@ unsigned char* Search_Strs(unsigned char *p){
             break;
         }
         if(j>=strlen(str1)){   /*则已找到第一个字符串'_SM_',在其后16byte的5个byte是否是关键字'_DMI_'*/
-          ptr+=0x10;   //地址加16个byte
-          for(j=0;j<strlen(str2);j++){
-            if(*(ptr+j)!=*(str2+j))
-            break;
+            ptr+=0x10;   //地址加16个byte
+            for(j=0;j<strlen(str2);j++){
+                    if(*(ptr+j)!=*(str2+j))
+                    break;
+                }
+            if(j>=strlen(str2)){   //找到第二个字符串'_DMI_'
+                return p+0x18;       //SMBIOS结构表地址
+            }
+        }else{
+            ptr+=0x10;   //没有找到第一个字符串，ptr+0x10重新search。
         }
-        if(j>=strlen(str2)){   //找到第二个字符串'_DMI_'
-            return p+0x18;       //SMBIOS结构表地址
-        }
-      }
-     else{
-      ptr+=0x10;   //没有找到第一个字符串，ptr+0x10重新search。
-     }
     }
 }
 
