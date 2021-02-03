@@ -1,0 +1,14 @@
+{
+    "user": "root",
+    "password": "0penBmc",
+    "dmi": {
+        "Chassis Part Number": "xxx",
+        "Board Mfg": "xxx",
+        "Board Product": "xxx",
+        "Board Part Number": "xxx",
+        "Product Manufacturer": "xxx",
+        "Product Name": "xxx",
+        "Product Part Number": "xxx",
+        "Product Version": "xxx"
+    }
+}
